@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Travel Recommendation</title>
+<style>
+body{font-family:Arial;margin:0}
+nav{background:#333;padding:15px}
+nav a{color:white;margin:10px;text-decoration:none}
+input,button{padding:8px}
+.container{padding:20px}
+img{width:300px;height:200px;margin:10px}
+</style>
+</head>
+<body>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="about.html">About Us</a>
+<a href="contact.html">Contact Us</a>
+
+<input type="text" id="search" placeholder="Search">
+<button onclick="searchPlace()">Search</button>
+<button onclick="clearResults()">Clear</button>
+</nav>
+
+<div class="container">
+<h1>Travel Recommendation Website</h1>
+<p>Explore beaches, temples and countries around the world.</p>
+
+<div id="results"></div>
+</div>
+
+<script>
+function searchPlace(){
+let text=document.getElementById("search").value.toLowerCase();
+let result=document.getElementById("results");
+
+if(text.includes("beach")){
+result.innerHTML=`
+<h2>Beaches</h2>
+<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
+<img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21">
+`;
+}
+else if(text.includes("temple")){
+result.innerHTML=`
+<h2>Temples</h2>
+<img src="https://images.unsplash.com/photo-1548013146-72479768bada">
+<img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da">
+`;
+}
+else if(text.includes("country")){
+result.innerHTML=`
+<h2>Countries</h2>
+<img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34">
+<img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5ce">
+`;
+}
+}
+function clearResults(){
+document.getElementById("results").innerHTML="";
+document.getElementById("search").value="";
+}
+</script>
+
+</body>
+</html>
